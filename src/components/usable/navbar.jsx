@@ -6,6 +6,7 @@ import { Search, ShoppingCart, Heart, Package, User, X } from "lucide-react"
 import CartSidebar from "./cart"
 import WishlistSidebar from "./wishlist"
 import SearchOverlay from "./search"
+import Image from "next/image"
 
 // Custom Hamburger Icon Component
 const HamburgerIcon = ({ isOpen }) => (
@@ -49,102 +50,41 @@ export default function Navbar() {
     <>
       {/* Main Navbar */}
       <nav className="sticky top-0 z-40 w-full bg-green-50 backdrop-blur-md bg-opacity-95 shadow-lg border-b border-green-300/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Desktop Layout */}
-          <div className="hidden md:flex items-center justify-between h-20 px-2">
+          <div className="hidden md:flex items-center h-20 px-2 relative w-full">
             {/* Left - Logo */}
-            <div className="flex-shrink-0">
-              <Link
-                href="/"
-                className="text-2xl font-bold text-green-800 hover:text-green-600 transition-colors duration-300"
-              >
-                Spiruboost
+            <div className="flex-shrink-0 flex items-center absolute left-0 top-1/2 -translate-y-1/2" style={{ minWidth: 260 }}>
+              <Link href="/" className="flex items-center space-x-2">
+                <Image
+                  src="/Spiruboost.png"
+                  alt="Spiruboost Logo"
+                  width={150}
+                  height={150}
+                  className="object-contain"
+                  priority
+                />
               </Link>
             </div>
 
             {/* Center - Navigation Links */}
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="text-green-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 relative group"
-                >
-                  {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              ))}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="flex items-baseline space-x-10">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className="text-green-700 hover:text-red-600 px-3 py-2 rounded-md text-base font-semibold transition-all duration-300 hover:scale-105 relative group"
+                  >
+                    {link.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                ))}
+              </div>
             </div>
 
             {/* Right - Icons */}
-            <div className="flex items-center space-x-6">
-              <button
-                onClick={toggleSearch}
-                className="p-2 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 hover:scale-110"
-              >
-                <Search className="h-6 w-6 stroke-1" />
-              </button>
-
-              <button
-                onClick={toggleCart}
-                className="p-2 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 hover:scale-110 relative"
-              >
-                <ShoppingCart className="h-6 w-6 stroke-1" />
-                <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  2
-                </span>
-              </button>
-
-              <button
-                onClick={toggleWishlist}
-                className="p-2 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 hover:scale-110 relative"
-              >
-                <Heart className="h-6 w-6 stroke-1" />
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  3
-                </span>
-              </button>
-
-              <Link
-                href="/track"
-                className="p-2 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 hover:scale-110"
-              >
-                <Package className="h-6 w-6 stroke-1" />
-              </Link>
-
-              <Link
-                href="/login"
-                className="p-2 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 hover:scale-110"
-              >
-                <User className="h-6 w-6 stroke-1" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Mobile Layout */}
-          <div className="md:hidden flex items-center justify-between h-20 px-4">
-            {/* Left - Menu Button */}
-            <button
-              onClick={toggleMenu}
-              className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300"
-            >
-              <HamburgerIcon isOpen={isMenuOpen} />
-            </button>
-
-            {/* Center - Logo */}
-            <div className="absolute left-1/2 -translate-x-1/2">
-              <Link
-                href="/"
-                className="text-xl font-bold text-green-800 hover:text-green-600 transition-colors duration-300"
-              >
-                Spiruboost
-              </Link>
-            </div>
-
-            {/* Right - Search and Cart */}
-            <div className="flex items-center space-x-2 ml-auto">
-              {" "}
-              {/* ml-auto pushes it to the right */}
+            <div className="flex-shrink-0 flex items-center absolute right-0 top-1/2 -translate-y-1/2" style={{ minWidth: 260 }}>
               <button
                 onClick={toggleSearch}
                 className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300"
@@ -156,6 +96,71 @@ export default function Navbar() {
                 className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 relative"
               >
                 <ShoppingCart className="h-6 w-6 stroke-1" />
+                <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  2
+                </span>
+              </button>
+              <button
+                onClick={toggleWishlist}
+                className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 relative"
+              >
+                <Heart className="h-6 w-6 stroke-1" />
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  3
+                </span>
+              </button>
+              <Link
+                href="/track"
+                className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300"
+              >
+                <Package className="h-6 w-6 stroke-1" />
+              </Link>
+              <Link
+                href="/login"
+                className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300"
+              >
+                <User className="h-6 w-6 stroke-1" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="md:hidden flex items-center justify-between h-20 pl-0 pr-0 relative">
+            {/* Left - Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="p-7.5 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 z-10"
+            >
+              <HamburgerIcon isOpen={isMenuOpen} />
+            </button>
+
+            {/* Center - Logo */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/Spiruboost.png"
+                  alt="Spiruboost Logo"
+                  width={145}
+                  height={135}
+                  className="object-contain mx-auto"
+                  priority
+                />
+              </Link>
+            </div>
+
+            {/* Right - Icons */}
+            <div className="flex items-center space-x-0 z-10 mr-2">
+              <button
+                onClick={toggleSearch}
+                className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300"
+              >
+                <Search className="h-7 w-7 stroke-1" />
+              </button>
+              <button
+                onClick={toggleCart}
+                className="p-0.5 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 relative"
+              >
+                <ShoppingCart className="h-7 w-7 stroke-1" />
                 <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                   2
                 </span>
