@@ -125,11 +125,11 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Layout */}
-          <div className="md:hidden flex items-center justify-between h-20 pl-0 pr-0 relative">
-            {/* Left - Menu Button */}
+          <div className="md:hidden flex items-center justify-between h-20 w-full max-w-none pl-0 pr-0 relative">
+            {/* Left - Hamburger */}
             <button
               onClick={toggleMenu}
-              className="p-7.5 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 z-10"
+              className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 z-10"
             >
               <HamburgerIcon isOpen={isMenuOpen} />
             </button>
@@ -149,10 +149,10 @@ export default function Navbar() {
             </div>
 
             {/* Right - Icons */}
-            <div className="flex items-center space-x-0 z-10 mr-2">
+            <div className="flex items-center mr-2">
               <button
                 onClick={toggleSearch}
-                className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300"
+                className="p-2 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300"
               >
                 <Search className="h-7 w-7 stroke-1" />
               </button>
