@@ -2,10 +2,10 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Button } from "@/src/components/ui/button"
+import { Input } from "@/src/components/ui/input"
+import { Label } from "@/src/components/ui/label"
+import { Checkbox } from "@/src/components/ui/checkbox"
 import { FcGoogle } from "react-icons/fc"
 
 export default function LoginForm({ setView, router }) {

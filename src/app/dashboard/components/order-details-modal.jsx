@@ -1,7 +1,7 @@
 "use client"
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { Separator } from "@/components/ui/separator"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/src/components/ui/dialog"
+import { Separator } from "@/src/components/ui/separator"
 
 export default function OrderDetailsModal({ isOpen, onClose, order }) {
   if (!order) return null

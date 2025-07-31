@@ -1,8 +1,8 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
+import { Button } from "@/src/components/ui/button"
+import { RadioGroupItem } from "@/src/components/ui/radio-group"
+import { Label } from "@/src/components/ui/label"
 
 export default function AddressCard({ address, isDefault, onSetDefault, onEdit, onDelete }) {
   return (

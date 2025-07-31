@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Button } from "@/src/components/ui/button"
+import { Input } from "@/src/components/ui/input"
+import { Label } from "@/src/components/ui/label"
 import PasswordRequirements from "./password-requirements"
-import { validatePassword } from "@/lib/auth-utils"
+import { validatePassword } from "@/src/lib/auth-utils"
 
 export default function NewPasswordForm({ setView, router }) {
   const [password, setPassword] = useState("")

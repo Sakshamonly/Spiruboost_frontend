@@ -2,8 +2,8 @@
 
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { Button } from "@/src/components/ui/button"
+import { Input } from "@/src/components/ui/input"
 
 export default function OtpVerificationForm({ onOtpSuccess }) {
   const [otp, setOtp] = useState(Array(6).fill(""))

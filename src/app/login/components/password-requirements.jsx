@@ -1,5 +1,5 @@
 import { CheckCircle2, XCircle } from "lucide-react"
-import { validatePassword } from "@/lib/auth-utils"
+import { validatePassword } from "@/src/lib/auth-utils"
 
 // Password Requirements Component
 export default function PasswordRequirements({ password }) {

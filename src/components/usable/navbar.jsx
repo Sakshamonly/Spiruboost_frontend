@@ -21,7 +21,7 @@ const HamburgerIcon = ({ isOpen }) => (
   </div>
 )
 
-export default function Navbar() {
+export default function navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [isWishlistOpen, setIsWishlistOpen] = useState(false)
@@ -33,11 +33,11 @@ export default function Navbar() {
   const toggleSearch = () => setIsSearchOpen(!isSearchOpen)
 
   const navLinks = [
-    { label: "Boost", href: "/why-spirulina" },
-    { label: "Products", href: "/product" },
+    { label: "Boost", href: "/boost" },
+    { label: "Products", href: "/checkout" },
     { label: "Fusion", href: "/recipes" },
     { label: "About", href: "/about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "#footer" },
   ]
 
   const mobileMenuItems = [

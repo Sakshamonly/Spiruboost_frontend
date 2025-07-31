@@ -3,8 +3,8 @@
 import { useState } from "react"
 import AddressCard from "./address-card"
 import AddressFormModal from "./address-form-modal"
-import { Button } from "@/components/ui/button"
-import { RadioGroup } from "@/components/ui/radio-group"
+import { Button } from "@/src/components/ui/button"
+import { RadioGroup } from "@/src/components/ui/radio-group"
 import { Plus } from "lucide-react"
 
 export default function SavedAddressesSection({

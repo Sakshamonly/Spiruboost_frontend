@@ -6,7 +6,7 @@ import UserDetailsSection from "./components/user-details-section"
 import OrdersSection from "./components/orders-section"
 import SavedAddressesSection from "./components/saved-addresses-section"
 import OrderDetailsModal from "./components/order-details-modal"
-import Navbar from "@/components/usable/navbar" // Navbar import kiya
+import Navbar from "@/src/components/usable/navbar" // Navbar import kiya
 
 export default function UserDashboard() {
   const router = useRouter()

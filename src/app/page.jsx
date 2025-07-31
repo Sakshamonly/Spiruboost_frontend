@@ -1,11 +1,14 @@
 "use client"
 
-import Navbar from "@/components/usable/navbar"
+import Navbar from "@/src/components/usable/navbar"
+import Footer from "@/src/components/usable/footer"
 
 export default function Page() {
   return (
     <main>
       <Navbar />
-      </main>
-      )
+      <p>Content</p>
+      <Footer />
+    </main>
+  )
 }

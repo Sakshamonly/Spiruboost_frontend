@@ -2,12 +2,12 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import LoginForm from "@/app/login/components/login-form"
-import SignupForm from "@/app/login/components/signup-form"
-import OtpVerificationForm from "@/app/login/components/otp-verification-form"
-import ForgotPasswordForm from "@/app/login/components/forgot-password-form"
-import NewPasswordForm from "@/app/login/components/new-password-form"
-import Navbar from "@/components/usable/navbar" // <-- Navbar import
+import LoginForm from "@/src/app/login/components/login-form"
+import SignupForm from "@/src/app/login/components/signup-form"
+import OtpVerificationForm from "@/src/app/login/components/otp-verification-form"
+import ForgotPasswordForm from "@/src/app/login/components/forgot-password-form"
+import NewPasswordForm from "@/src/app/login/components/new-password-form"
+import Navbar from "@/src/components/usable/navbar" // <-- Navbar import
 
 export default function AuthPage() {
   const [view, setView] = useState("login") // 'login', 'signup', 'otp', 'forgot-password', 'new-password'

@@ -1,10 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/src/components/ui/dialog"
+import { Button } from "@/src/components/ui/button"
+import { Input } from "@/src/components/ui/input"
+import { Label } from "@/src/components/ui/label"
 
 export default function AddressFormModal({ isOpen, onClose, onSave, address }) {
   const [addressLine1, setAddressLine1] = useState("")
