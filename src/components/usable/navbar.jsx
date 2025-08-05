@@ -35,7 +35,7 @@ export default function navbar() {
   const navLinks = [
     { label: "Boost", href: "/boost" },
     { label: "Products", href: "/checkout" },
-    { label: "Fusion", href: "/recipes" },
+    { label: "Fusion", href: "/recipe" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "#footer" },
   ]
