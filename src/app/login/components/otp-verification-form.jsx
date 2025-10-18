@@ -62,11 +62,10 @@ export default function OtpVerificationForm({ onOtpSuccess }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 p-4 sm:p-8">
-      <div className="flex justify-center mb-6">
-        <Image src="/placeholder.svg?height=80&width=80" alt="Spiruboost Logo" width={80} height={80} />
-      </div>
-      <h2 className="text-3xl font-bold text-center text-blue-600 mb-2">OTP Verification</h2>
-      <p className="text-center text-gray-600 text-base mb-6">OTP has been sent to your mobile number</p>
+      <h2 className="text-5xl font-extrabold text-center bg-gradient-to-r from-yellow-600 via-orange-600 to-yellow-700 bg-clip-text text-transparent mb-2">
+        OTP Verification
+      </h2>
+      <p className="text-center text-gray-700 text-lg mb-6 font-medium">OTP has been sent to your mobile number</p>
       <div className="flex justify-center gap-2">
         {otp.map((digit, index) => (
           <Input
@@ -80,11 +79,11 @@ export default function OtpVerificationForm({ onOtpSuccess }) {
             onKeyDown={(e) => handleKeyDown(e, index)}
             onPaste={handlePaste}
             ref={(el) => (inputRefs.current[index] = el)}
-            className="w-10 h-10 sm:w-12 sm:h-12 text-center text-xl sm:text-2xl font-bold bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+            className="w-10 h-10 sm:w-12 sm:h-12 text-center text-xl sm:text-2xl font-bold bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500"
           />
         ))}
       </div>
-      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-3 mt-6">
+      <Button type="submit" className="w-full bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white text-lg py-3 mt-6">
         Submit OTP
       </Button>
     </form>

@@ -38,11 +38,10 @@ export default function NewPasswordForm({ setView, router }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 p-4 sm:p-8">
-      <div className="flex justify-center mb-6">
-        <Image src="/placeholder.svg?height=80&width=80" alt="Spiruboost Logo" width={80} height={80} />
-      </div>
-      <h2 className="text-3xl font-bold text-center text-blue-600 mb-2">Set New Password</h2>
-      <p className="text-center text-gray-600 text-base mb-6">Create a strong, new password for your account.</p>
+      <h2 className="text-5xl font-extrabold text-center bg-gradient-to-r from-orange-600 via-yellow-600 to-orange-700 bg-clip-text text-transparent mb-2">
+        Set New Password
+      </h2>
+      <p className="text-center text-gray-700 text-lg mb-6 font-medium">Create a strong, new password for your account.</p>
       <div>
         <Label htmlFor="new-password" className="text-black text-base mb-2 block">
           New Password
@@ -56,7 +55,7 @@ export default function NewPasswordForm({ setView, router }) {
           onFocus={() => setShowPasswordRequirements(true)}
           onBlur={() => setShowPasswordRequirements(false)}
           maxLength={15} // Max 15 characters for password
-          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-base py-2"
+          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-base py-2"
         />
         {showPasswordRequirements && <PasswordRequirements password={password} />}
       </div>
@@ -71,11 +70,11 @@ export default function NewPasswordForm({ setView, router }) {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           maxLength={15} // Max 15 characters for password
-          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-base py-2"
+          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-base py-2"
         />
         {confirmPasswordError && <p className="text-red-500 text-sm mt-1">{confirmPasswordError}</p>}
       </div>
-      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-3 mt-6">
+      <Button type="submit" className="w-full bg-gradient-to-r from-orange-600 to-yellow-600 hover:from-orange-700 hover:to-yellow-700 text-white text-lg py-3 mt-6">
         Reset Password
       </Button>
     </form>

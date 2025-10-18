@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/src/components/ui/button"
 import { Input } from "@/src/components/ui/input"
 import { Label } from "@/src/components/ui/label"
-import { LogOut, Edit, Save, X } from "lucide-react"
+import { LogOut, Edit, Save, X, User, Mail, Phone, Calendar, MapPin } from "lucide-react"
 
 export default function UserDetailsSection({ details, onUpdateUserDetails, onLogout }) {
   const [isEditing, setIsEditing] = useState(false)
@@ -38,82 +38,118 @@ export default function UserDetailsSection({ details, onUpdateUserDetails, onLog
     setIsEditing(false)
   }
 
+  const getIcon = (label) => {
+    switch (label) {
+      case "Name":
+        return <User className="h-5 w-5 text-purple-600" />
+      case "Email":
+        return <Mail className="h-5 w-5 text-blue-600" />
+      case "Mobile":
+        return <Phone className="h-5 w-5 text-green-600" />
+      case "Date of Birth":
+        return <Calendar className="h-5 w-5 text-pink-600" />
+      case "Default Address":
+        return <MapPin className="h-5 w-5 text-orange-600" />
+      default:
+        return <User className="h-5 w-5 text-gray-600" />
+    }
+  }
+
   return (
-    <section className="w-full px-4 py-3 bg-white border-b border-emerald-100 shadow-md md:rounded-lg flex flex-col min-h-[250px] relative">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold text-emerald-800">User Details</h2>
-        {!isEditing ? (
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsEditing(true)}
-            className="text-emerald-600 hover:text-emerald-900"
-          >
-            <Edit className="h-5 w-5" />
-            <span className="sr-only">Edit Details</span>
-          </Button>
-        ) : (
-          <div className="flex space-x-2">
+    <section className="w-full bg-white/80 backdrop-blur-sm border border-white/20 shadow-xl rounded-2xl overflow-hidden">
+      {/* Header */}
+      <div className="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-4">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+              <User className="h-6 w-6 text-white" />
+            </div>
+            <h2 className="text-xl font-bold text-white">Profile Details</h2>
+          </div>
+          {!isEditing ? (
             <Button
               variant="ghost"
-              size="icon"
-              onClick={handleSave}
-              className="text-emerald-600 hover:text-emerald-900"
+              size="sm"
+              onClick={() => setIsEditing(true)}
+              className="text-white hover:bg-white/20 border border-white/30"
             >
-              <Save className="h-5 w-5" />
-              <span className="sr-only">Save Changes</span>
+              <Edit className="h-4 w-4 mr-2" />
+              Edit
             </Button>
-            <Button variant="ghost" size="icon" onClick={handleCancel} className="text-red-600 hover:text-red-900">
-              <X className="h-5 w-5" />
-              <span className="sr-only">Cancel</span>
-            </Button>
-          </div>
-        )}
+          ) : (
+            <div className="flex space-x-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleSave}
+                className="text-white hover:bg-white/20 border border-white/30"
+              >
+                <Save className="h-4 w-4 mr-2" />
+                Save
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={handleCancel} 
+                className="text-white hover:bg-white/20 border border-white/30"
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
 
-      <div className="space-y-2 flex-grow">
+      {/* Content */}
+      <div className="p-6 space-y-4">
         {details.map((detail, index) => (
           <div
             key={index}
-            className="flex flex-col sm:flex-row sm:justify-between sm:items-center pb-2 border-b border-emerald-50 last:border-b-0 last:pb-0"
+            className="flex items-center space-x-4 p-4 bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-100 hover:shadow-md transition-all duration-200"
           >
-            <Label
-              htmlFor={detail.label.toLowerCase().replace(/\s/g, "")}
-              className="text-sm font-medium text-gray-600 sm:w-1/3"
-            >
-              {detail.label}
-            </Label>
-            {isEditing &&
-            detail.label !== "Email" &&
-            detail.label !== "Mobile" &&
-            detail.label !== "Default Address" ? ( // Added condition for Default Address
-              <Input
-                id={detail.label.toLowerCase().replace(/\s/g, "")}
-                value={editableDetails[detail.label.toLowerCase().replace(/\s/g, "")] || ""}
-                onChange={(e) => handleInputChange(detail.label, e.target.value)}
-                className="w-full sm:w-2/3 text-sm text-gray-900 sm:text-right border-none focus-visible:ring-0 focus-visible:ring-offset-0"
-              />
-            ) : (
-              <span
-                className={`w-full sm:w-2/3 text-sm text-gray-900 sm:text-right ${
-                  (detail.label === "Email" || detail.label === "Mobile" || detail.label === "Default Address") &&
-                  isEditing // Added condition for Default Address
-                    ? "text-gray-500 cursor-not-allowed"
-                    : ""
-                }`}
-              >
-                {detail.value}
-              </span>
-            )}
+            <div className="flex-shrink-0">
+              {getIcon(detail.label)}
+            </div>
+            <div className="flex-1 min-w-0">
+              <Label className="text-sm font-medium text-gray-600 block mb-1">
+                {detail.label}
+              </Label>
+              {isEditing &&
+              detail.label !== "Email" &&
+              detail.label !== "Mobile" &&
+              detail.label !== "Default Address" ? (
+                <Input
+                  id={detail.label.toLowerCase().replace(/\s/g, "")}
+                  value={editableDetails[detail.label.toLowerCase().replace(/\s/g, "")] || ""}
+                  onChange={(e) => handleInputChange(detail.label, e.target.value)}
+                  className="text-sm text-gray-900 border-purple-200 focus:border-purple-400 focus:ring-purple-400"
+                  placeholder={`Enter your ${detail.label.toLowerCase()}`}
+                />
+              ) : (
+                <div className="text-sm text-gray-900 font-medium">
+                  {detail.value}
+                  {(detail.label === "Email" || detail.label === "Mobile" || detail.label === "Default Address") &&
+                  isEditing && (
+                    <span className="text-xs text-gray-500 block mt-1">
+                      This field cannot be edited here
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Logout button at the bottom of the card, with dynamic spacing */}
-      <div className="mt-auto pt-4 border-t border-emerald-100">
-        <Button variant="ghost" onClick={onLogout} className="text-gray-600 hover:text-red-600">
+      {/* Footer */}
+      <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+        <Button 
+          variant="ghost" 
+          onClick={onLogout} 
+          className="w-full text-red-600 hover:text-red-700 hover:bg-red-50 font-medium"
+        >
           <LogOut className="h-4 w-4 mr-2" />
-          Logout
+          Sign Out
         </Button>
       </div>
     </section>

@@ -96,11 +96,10 @@ export default function SignupForm({ setView, setOtpFor }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 p-4 sm:p-8">
-      <div className="flex justify-center mb-6">
-        <Image src="/placeholder.svg?height=80&width=80" alt="Spiruboost Logo" width={80} height={80} />
-      </div>
-      <h2 className="text-3xl font-bold text-center text-blue-600 mb-2">Sign Up</h2>
-      <p className="text-center text-gray-600 text-base mb-6">
+      <h2 className="text-5xl font-extrabold text-center bg-gradient-to-r from-yellow-600 via-orange-600 to-yellow-700 bg-clip-text text-transparent mb-2">
+        Join Spiruboost!
+      </h2>
+      <p className="text-center text-gray-700 text-lg mb-6 font-medium">
         Join us to explore a world of natural products and exclusive offers.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -113,7 +112,7 @@ export default function SignupForm({ setView, setOtpFor }) {
             required
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
-            className="bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-base py-2"
+            className="bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-base py-2"
           />
         </div>
         <div>
@@ -125,7 +124,7 @@ export default function SignupForm({ setView, setOtpFor }) {
             required
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            className="bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-base py-2"
+            className="bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-base py-2"
           />
         </div>
       </div>
@@ -139,7 +138,7 @@ export default function SignupForm({ setView, setOtpFor }) {
           required
           value={dob}
           onChange={handleDobChange}
-          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-base py-2"
+          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-base py-2"
         />
         {dobError && <p className="text-red-500 text-sm mt-1">{dobError}</p>}
       </div>
@@ -154,7 +153,7 @@ export default function SignupForm({ setView, setOtpFor }) {
           required
           value={mobile}
           onChange={handleMobileChange}
-          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-base py-2"
+          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-base py-2"
         />
         {mobileError && <p className="text-red-500 text-sm mt-1">{mobileError}</p>}
       </div>
@@ -169,7 +168,7 @@ export default function SignupForm({ setView, setOtpFor }) {
           required
           value={email}
           onChange={handleEmailChange}
-          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-base py-2"
+          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-base py-2"
         />
         {emailError && <p className="text-red-500 text-sm mt-1">{emailError}</p>}
       </div>
@@ -186,7 +185,7 @@ export default function SignupForm({ setView, setOtpFor }) {
           onFocus={() => setShowPasswordRequirements(true)}
           onBlur={() => setShowPasswordRequirements(false)}
           maxLength={15} // Max 15 characters for password
-          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-base py-2"
+          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-base py-2"
         />
         {showPasswordRequirements && <PasswordRequirements password={password} />}
       </div>
@@ -201,13 +200,13 @@ export default function SignupForm({ setView, setOtpFor }) {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           maxLength={15} // Max 15 characters for password
-          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-base py-2"
+          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-base py-2"
         />
         {confirmPasswordError && <p className="text-red-500 text-sm mt-1">{confirmPasswordError}</p>}
       </div>
       <Button
         type="submit"
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300 text-lg py-3 mt-6"
+        className="w-full bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white transition-colors duration-300 text-lg py-3 mt-6"
       >
         Sign Up
       </Button>
@@ -216,7 +215,7 @@ export default function SignupForm({ setView, setOtpFor }) {
         <Button
           type="button"
           variant="outline"
-          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-blue-600 border-blue-300 text-base py-3"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-orange-50 text-orange-600 border-orange-300 text-base py-3"
         >
           <FcGoogle className="h-5 w-5" />
           Continue with Google
@@ -224,7 +223,7 @@ export default function SignupForm({ setView, setOtpFor }) {
       </div>
       <p className="text-center text-gray-600 text-base mt-6">
         Already have an account?{" "}
-        <button type="button" onClick={() => setView("login")} className="text-blue-600 hover:underline font-medium">
+        <button type="button" onClick={() => setView("login")} className="text-orange-600 hover:underline font-medium">
           Login
         </button>
       </p>

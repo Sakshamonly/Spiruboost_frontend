@@ -50,11 +50,10 @@ export default function LoginForm({ setView, router }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 p-4 sm:p-8">
-      <div className="flex justify-center mb-6">
-        <Image src="/placeholder.svg?height=80&width=80" alt="Spiruboost Logo" width={80} height={80} />
-      </div>
-      <h2 className="text-3xl font-bold text-center text-blue-600 mb-2">Login</h2>
-      <p className="text-center text-gray-600 text-base mb-6">
+      <h2 className="text-5xl font-extrabold text-center bg-gradient-to-r from-orange-600 via-yellow-600 to-orange-700 bg-clip-text text-transparent mb-2">
+        Welcome Back!
+      </h2>
+      <p className="text-center text-gray-700 text-lg mb-6 font-medium">
         Access your account to manage your orders and preferences.
       </p>
       <div>
@@ -69,13 +68,13 @@ export default function LoginForm({ setView, router }) {
           value={identifier}
           onChange={handleIdentifierChange}
           maxLength={identifierType === "mobile" ? 10 : undefined}
-          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-base py-2"
+          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-base py-2"
         />
         {identifierError && <p className="text-red-500 text-sm mt-1">{identifierError}</p>}
         <button
           type="button"
           onClick={() => setIdentifierType(identifierType === "email" ? "mobile" : "email")}
-          className="text-sm text-blue-600 hover:underline mt-3 block"
+          className="text-sm text-orange-600 hover:underline mt-3 block"
         >
           Use {identifierType === "email" ? "Mobile Number" : "Email"} instead
         </button>
@@ -91,7 +90,7 @@ export default function LoginForm({ setView, router }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           maxLength={15} // Max 15 characters for password
-          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-base py-2"
+          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-base py-2"
         />
       </div>
       <div className="flex items-center justify-between flex-wrap gap-2 mt-4">
@@ -104,14 +103,14 @@ export default function LoginForm({ setView, router }) {
         <button
           type="button"
           onClick={() => setView("forgot-password")}
-          className="text-base text-gray-600 hover:underline"
+          className="text-base text-orange-600 hover:underline"
         >
           Forgot Password?
         </button>
       </div>
       <Button
         type="submit"
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300 text-lg py-3 mt-6"
+        className="w-full bg-gradient-to-r from-orange-600 to-yellow-600 hover:from-orange-700 hover:to-yellow-700 text-white transition-colors duration-300 text-lg py-3 mt-6"
       >
         Login
       </Button>
@@ -120,7 +119,7 @@ export default function LoginForm({ setView, router }) {
         <Button
           type="button"
           variant="outline"
-          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-blue-600 border-blue-300 text-base py-3"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-orange-50 text-orange-600 border-orange-300 text-base py-3"
         >
           <FcGoogle className="h-5 w-5" />
           Continue with Google
@@ -128,7 +127,7 @@ export default function LoginForm({ setView, router }) {
       </div>
       <p className="text-center text-gray-600 text-base mt-6">
         New user?{" "}
-        <button type="button" onClick={() => setView("signup")} className="text-blue-600 hover:underline font-medium">
+        <button type="button" onClick={() => setView("signup")} className="text-orange-600 hover:underline font-medium">
           Sign up now
         </button>
       </p>

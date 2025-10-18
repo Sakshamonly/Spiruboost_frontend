@@ -171,26 +171,51 @@ export default function UserDashboard() {
   }, [userData, allAddresses])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-lime-50 to-emerald-100 text-gray-800">
-      <Navbar /> {/* Navbar yahan add kiya */}
-      <main className="container mx-auto max-w-5xl py-4 px-4 space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <UserDetailsSection
-            details={userDetails}
-            onUpdateUserDetails={handleUpdateUserDetails}
-            onLogout={handleLogout}
-          />
-          <SavedAddressesSection
-            addresses={allAddresses}
-            currentDefaultAddressId={userData.defaultAddressId}
-            onAddressChange={handleAddressChange}
-            onAddAddress={handleAddAddress}
-            onUpdateAddress={handleUpdateAddress}
-            onDeleteAddress={handleDeleteAddress}
-          />
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-cyan-50 text-gray-800">
+      <Navbar />
+      
+      {/* Header Section */}
+      <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white py-8">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="text-center">
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">
+              Welcome back, {userData.name}! 👋
+            </h1>
+            <p className="text-purple-100 text-lg">
+              Manage your account, orders, and preferences
+            </p>
+          </div>
         </div>
-        <OrdersSection orders={mockOrders} onOrderClick={handleOrderClick} />
+      </div>
+
+      <main className="container mx-auto max-w-6xl py-8 px-4 space-y-8 -mt-4">
+        {/* Dashboard Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="lg:col-span-1">
+            <UserDetailsSection
+              details={userDetails}
+              onUpdateUserDetails={handleUpdateUserDetails}
+              onLogout={handleLogout}
+            />
+          </div>
+          <div className="lg:col-span-1">
+            <SavedAddressesSection
+              addresses={allAddresses}
+              currentDefaultAddressId={userData.defaultAddressId}
+              onAddressChange={handleAddressChange}
+              onAddAddress={handleAddAddress}
+              onUpdateAddress={handleUpdateAddress}
+              onDeleteAddress={handleDeleteAddress}
+            />
+          </div>
+        </div>
+        
+        {/* Orders Section */}
+        <div className="w-full">
+          <OrdersSection orders={mockOrders} onOrderClick={handleOrderClick} />
+        </div>
       </main>
+      
       <OrderDetailsModal isOpen={isOrderModalOpen} onClose={handleCloseOrderModal} order={selectedOrder} />
     </div>
   )

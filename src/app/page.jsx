@@ -1,14 +1,5 @@
-"use client"
-
-import Navbar from "@/src/components/usable/navbar"
-import Footer from "@/src/components/usable/footer"
+import Home from "./home/page"
 
 export default function Page() {
-  return (
-    <main>
-      <Navbar />
-      <p>Content</p>
-      <Footer />
-    </main>
-  )
+  return <Home />
 }

@@ -36,11 +36,10 @@ export default function ForgotPasswordForm({ setView, setOtpFor }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 p-4 sm:p-8">
-      <div className="flex justify-center mb-6">
-        <Image src="/placeholder.svg?height=80&width=80" alt="Spiruboost Logo" width={80} height={80} />
-      </div>
-      <h2 className="text-3xl font-bold text-center text-blue-600 mb-2">Reset Password</h2>
-      <p className="text-center text-gray-600 text-base mb-6">
+      <h2 className="text-5xl font-extrabold text-center bg-gradient-to-r from-orange-600 via-red-600 to-orange-700 bg-clip-text text-transparent mb-2">
+        Reset Password
+      </h2>
+      <p className="text-center text-gray-700 text-lg mb-6 font-medium">
         Enter your registered mobile number to receive a verification code.
       </p>
       <div>
@@ -54,16 +53,16 @@ export default function ForgotPasswordForm({ setView, setOtpFor }) {
           required
           value={mobile}
           onChange={handleMobileChange}
-          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-base py-2"
+          className="bg-gray-50 text-gray-800 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-base py-2"
         />
         {mobileError && <p className="text-red-500 text-sm mt-1">{mobileError}</p>}
       </div>
-      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-3 mt-6">
+      <Button type="submit" className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white text-lg py-3 mt-6">
         Submit
       </Button>
       <p className="text-center text-gray-600 text-base mt-6">
         Remembered your password?{" "}
-        <button type="button" onClick={() => setView("login")} className="text-blue-600 hover:underline font-medium">
+        <button type="button" onClick={() => setView("login")} className="text-orange-600 hover:underline font-medium">
           Login
         </button>
       </p>

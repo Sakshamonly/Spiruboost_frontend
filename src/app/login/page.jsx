@@ -41,7 +41,7 @@ export default function AuthPage() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen flex items-center justify-center p-4 bg-[#f0fdf4] transition-colors duration-500 ease-in-out">
+      <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-orange-50 via-yellow-50 to-orange-100 transition-colors duration-500 ease-in-out">
         <div className="w-full max-w-md mx-auto transition-opacity duration-500 ease-in-out">{renderView()}</div>
       </div>
     </>

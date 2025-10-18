@@ -34,7 +34,7 @@ export default function navbar() {
 
   const navLinks = [
     { label: "Boost", href: "/boost" },
-    { label: "Products", href: "/checkout" },
+    { label: "Products", href: "/products" },
     { label: "Fusion", href: "/recipe" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "#footer" },
@@ -49,7 +49,7 @@ export default function navbar() {
   return (
     <>
       {/* Main Navbar */}
-      <nav className="sticky top-0 z-40 w-full bg-green-50 backdrop-blur-md bg-opacity-95 shadow-lg border-b border-green-300/30">
+      <nav className="sticky top-0 z-40 w-full bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-xl">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Desktop Layout */}
           <div className="hidden md:flex items-center h-20 px-2 relative w-full">
@@ -61,7 +61,7 @@ export default function navbar() {
                   alt="Spiruboost Logo"
                   width={150}
                   height={150}
-                  className="object-contain"
+                  className="object-contain drop-shadow-lg"
                   priority
                 />
               </Link>
@@ -74,10 +74,10 @@ export default function navbar() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="text-green-700 hover:text-red-600 px-3 py-2 rounded-md text-base font-semibold transition-all duration-300 hover:scale-105 relative group"
+                    className="text-gray-700 hover:text-gray-900 px-3 py-2 text-base font-bold tracking-wide transition-all duration-300 hover:scale-105 relative group"
                   >
                     {link.label}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
                   </Link>
                 ))}
               </div>
@@ -87,39 +87,33 @@ export default function navbar() {
             <div className="flex-shrink-0 flex items-center absolute right-0 top-1/2 -translate-y-1/2" style={{ minWidth: 260 }}>
               <button
                 onClick={toggleSearch}
-                className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300"
+                className="p-3 text-gray-600 hover:text-gray-800 transition-all duration-300"
               >
-                <Search className="h-6 w-6 stroke-1" />
+                <Search className="h-6 w-6 stroke-1.5" />
               </button>
               <button
                 onClick={toggleCart}
-                className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 relative"
+                className="p-3 text-gray-600 hover:text-gray-800 transition-all duration-300"
               >
-                <ShoppingCart className="h-6 w-6 stroke-1" />
-                <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  2
-                </span>
+                <ShoppingCart className="h-6 w-6 stroke-1.5" />
               </button>
               <button
                 onClick={toggleWishlist}
-                className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 relative"
+                className="p-3 text-gray-600 hover:text-gray-800 transition-all duration-300"
               >
-                <Heart className="h-6 w-6 stroke-1" />
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  3
-                </span>
+                <Heart className="h-6 w-6 stroke-1.5" />
               </button>
               <Link
                 href="/track"
-                className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300"
+                className="p-3 text-gray-600 hover:text-gray-800 transition-all duration-300"
               >
-                <Package className="h-6 w-6 stroke-1" />
+                <Package className="h-6 w-6 stroke-1.5" />
               </Link>
               <Link
                 href="/login"
-                className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300"
+                className="p-3 text-gray-600 hover:text-gray-800 transition-all duration-300"
               >
-                <User className="h-6 w-6 stroke-1" />
+                <User className="h-6 w-6 stroke-1.5" />
               </Link>
             </div>
           </div>
@@ -129,7 +123,7 @@ export default function navbar() {
             {/* Left - Hamburger */}
             <button
               onClick={toggleMenu}
-              className="p-3 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 z-10"
+              className="p-3 text-gray-600 hover:text-gray-800 transition-all duration-300 z-10"
             >
               <HamburgerIcon isOpen={isMenuOpen} />
             </button>
@@ -142,7 +136,7 @@ export default function navbar() {
                   alt="Spiruboost Logo"
                   width={145}
                   height={135}
-                  className="object-contain mx-auto"
+                  className="object-contain mx-auto drop-shadow-lg"
                   priority
                 />
               </Link>
@@ -152,18 +146,15 @@ export default function navbar() {
             <div className="flex items-center mr-2">
               <button
                 onClick={toggleSearch}
-                className="p-2 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300"
+                className="p-2 text-gray-600 hover:text-gray-800 transition-all duration-300"
               >
-                <Search className="h-7 w-7 stroke-1" />
+                <Search className="h-7 w-7 stroke-1.5" />
               </button>
               <button
                 onClick={toggleCart}
-                className="p-0.5 text-green-700 hover:text-green-900 hover:bg-green-50 rounded-full transition-all duration-300 relative"
+                className="p-0.5 text-gray-600 hover:text-gray-800 transition-all duration-300"
               >
-                <ShoppingCart className="h-7 w-7 stroke-1" />
-                <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  2
-                </span>
+                <ShoppingCart className="h-7 w-7 stroke-1.5" />
               </button>
             </div>
           </div>
@@ -179,21 +170,20 @@ export default function navbar() {
 
         {/* Mobile Menu Sidebar */}
         <div
-          className={`absolute left-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 overflow-hidden ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
+          className={`absolute left-0 top-0 h-full w-80 bg-white/90 backdrop-blur-xl shadow-2xl transform transition-transform duration-300 overflow-hidden border-r border-white/20 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
         >
           <div className="h-full flex flex-col">
             {/* Fixed Header */}
-            <div className="flex-shrink-0 p-6 border-b border-gray-200">
+            <div className="flex-shrink-0 p-6 border-b border-white/30">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-3xl font-bold text-gray-900">Menu</h2>
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">Menu</h2>
                 <button
                   onClick={toggleMenu}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                  className="p-2 hover:bg-white/30 backdrop-blur-sm rounded-xl transition-all duration-200"
                 >
-                  <X className="h-6 w-6 stroke-1" />
+                  <X className="h-6 w-6 stroke-1.5 text-gray-600" />
                 </button>
               </div>
-              {/* Removed the black underline here */}
             </div>
 
             {/* Scrollable Content */}
@@ -208,19 +198,19 @@ export default function navbar() {
                           item.onClick()
                           toggleMenu()
                         }}
-                        className="flex items-center space-x-4 w-full text-left px-3 py-2 text-gray-700 hover:text-red-600 rounded-lg transition-all duration-200 relative group text-sm font-medium"
+                        className="flex items-center space-x-4 w-full text-left px-3 py-2 text-gray-600 hover:text-gray-800 transition-all duration-200 relative group text-sm font-medium"
                       >
                         {item.label}
-                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></span>
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
                       </button>
                     ) : (
                       <Link
                         href={item.href}
                         onClick={toggleMenu}
-                        className="flex items-center space-x-4 px-3 py-2 text-gray-700 hover:text-red-600 rounded-lg transition-all duration-300 relative group text-sm font-medium"
+                        className="flex items-center space-x-4 px-3 py-2 text-gray-600 hover:text-gray-800 transition-all duration-300 relative group text-sm font-medium"
                       >
                         {item.label}
-                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></span>
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
                       </Link>
                     )}
                   </div>
@@ -234,11 +224,11 @@ export default function navbar() {
                     <Link
                       href={link.href}
                       onClick={toggleMenu}
-                      className="block p-3 text-lg font-medium text-gray-700 hover:text-red-600 rounded-lg transition-all duration-200"
+                      className="block p-3 text-lg font-bold tracking-wide text-gray-600 hover:text-gray-800 transition-all duration-200"
                     >
                       {link.label}
                     </Link>
-                    {index < navLinks.length - 1 && <div className="w-full h-px bg-gray-200 my-2"></div>}
+                    {index < navLinks.length - 1 && <div className="w-full h-px bg-white/30 my-2"></div>}
                   </div>
                 ))}
               </div>
