@@ -52,7 +52,7 @@ export default function HeroSection() {
       </div>
 
       {/* Navigation Arrows */}
-      <button
+      {/* <button
         onClick={goToPrev}
         className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 p-3 sm:p-4 bg-white/20 hover:bg-white/40 text-white rounded-full transition-all duration-300 backdrop-blur-sm"
       >
@@ -68,7 +68,7 @@ export default function HeroSection() {
         <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
-      </button>
+      </button> */}
 
       {/* Dot Indicators */}
       <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">

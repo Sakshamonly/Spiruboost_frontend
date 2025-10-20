@@ -8,45 +8,41 @@ import {
   Shield,
   Zap,
   Leaf,
-  Egg,
-  Carrot,
-  Milk,
-  Grape,
-  Coffee,
-  Banana,
-  GlassWater,
+  Star,
+  Heart,
+  ChevronRight,
 } from "lucide-react"
 import Navbar from "@/src/components/usable/navbar"
 import Footer from "@/src/components/usable/footer"
 
 export default function SpirulinaPage() {
-  const nutritionalBenefits = [
-    {
-      icon: <Dumbbell className="w-8 h-8 text-green-600" />,
-      title: "Complete Protein",
-      description: "Contains all essential amino acids, making it a superior plant-based protein source.",
-    },
-    {
-      icon: <Droplet className="w-8 h-8 text-green-600" />,
-      title: "Rich in Iron",
-      description: "Excellent bio-available iron, crucial for energy and red-blood-cell formation.",
-    },
-    {
-      icon: <Shield className="w-8 h-8 text-green-600" />,
-      title: "Vitamin B12",
-      description: "One of the few plant sources of active B12, vital for nerve function and metabolism.",
-    },
-    {
-      icon: <Zap className="w-8 h-8 text-green-600" />,
-      title: "Powerful Antioxidants",
-      description: "Phycocyanin and other antioxidants combat oxidative stress.",
-    },
-    {
-      icon: <Leaf className="w-8 h-8 text-green-600" />,
-      title: "Chlorophyll",
-      description: "High chlorophyll supports gentle detox and cellular health.",
-    },
-  ]
+  // const nutritionalBenefits = [
+//     {
+//       icon: <Dumbbell className="w-8 h-8 text-green-600" />,
+//       title: "Complete Protein",
+//       description: "Contains all essential amino acids, making it a superior plant-based protein source.",
+//     },
+//     {
+//       icon: <Droplet className="w-8 h-8 text-green-600" />,
+//       title: "Rich in Iron",
+//       description: "Excellent bio-available iron, crucial for energy and red-blood-cell formation.",
+//     },
+//     {
+//       icon: <Shield className="w-8 h-8 text-green-600" />,
+//       title: "Vitamin B12",
+//       description: "One of the few plant sources of active B12, vital for nerve function and metabolism.",
+//     },
+//     {
+//       icon: <Zap className="w-8 h-8 text-green-600" />,
+//       title: "Powerful Antioxidants",
+//       description: "Phycocyanin and other antioxidants combat oxidative stress.",
+//     },
+//     {
+//       icon: <Leaf className="w-8 h-8 text-green-600" />,
+//       title: "Chlorophyll",
+//       description: "High chlorophyll supports gentle detox and cellular health.",
+//     },
+//   ]
 
   const healthBenefits = [
     {
@@ -86,55 +82,55 @@ export default function SpirulinaPage() {
       nutrient: "Protein",
       equivalent: "Same as in 1 whole egg",
       food: "Egg",
-      icon: <Egg className="w-5 h-5 text-yellow-500" />,
+      // icon: <Egg className="w-5 h-5 text-yellow-500" />,
     },
     {
       nutrient: "Iron",
       equivalent: "Same as in 100g of spinach",
       food: "Spinach",
-      icon: <Leaf className="w-5 h-5 text-green-600" />,
+      // icon: <Leaf className="w-5 h-5 text-green-600" />,
     },
     {
       nutrient: "Beta-Carotene (Vitamin A)",
       equivalent: "Same as in 3 large carrots",
       food: "Carrots",
-      icon: <Carrot className="w-5 h-5 text-orange-500" />,
+      // icon: <Carrot className="w-5 h-5 text-orange-500" />,
     },
     {
       nutrient: "Vitamin B12",
       equivalent: "Same as in 250ml cow's milk",
       food: "Milk",
-      icon: <Milk className="w-5 h-5 text-gray-400" />, // Using Milk icon for yogurt
+      // icon: <Milk className="w-5 h-5 text-gray-400" />, // Using Milk icon for yogurt
     },
     {
       nutrient: "Antioxidants",
       equivalent: "Same as in 1 kg of mixed fruits",
       food: "Mixed Fruits",
-      icon: <Grape className="w-5 h-5 text-purple-500" />,
+      // icon: <Grape className="w-5 h-5 text-purple-500" />,
     },
     {
       nutrient: "Calcium",
       equivalent: "Same as in 1 bowl of curd or yogurt",
       food: "Yogurt",
-      icon: <Milk className="w-5 h-5 text-gray-400" />, // Using Milk icon for yogurt
+    //   icon: <Milk className="w-5 h-5 text-gray-400" />, // Using Milk icon for yogurt
     },
     {
       nutrient: "Chlorophyll / Detox power",
       equivalent: "Same as in 1 cup of green tea",
       food: "Green Tea",
-      icon: <Coffee className="w-5 h-5 text-green-700" />, // Using Coffee icon for tea
+      // icon: <Coffee className="w-5 h-5 text-green-700" />, // Using Coffee icon for tea
     },
     {
       nutrient: "Potassium",
       equivalent: "Same as in 1 banana",
       food: "Banana",
-      icon: <Banana className="w-5 h-5 text-yellow-600" />,
+      // icon: <Banana className="w-5 h-5 text-yellow-600" />,
     },
     {
       nutrient: "Vitamin C Equivalent Effect",
       equivalent: "Same as in 1 glass of orange juice",
       food: "Orange Juice",
-      icon: <GlassWater className="w-5 h-5 text-orange-600" />,
+      // icon: <GlassWater className="w-5 h-5 text-orange-600" />,
     },
   ]
 
@@ -186,18 +182,46 @@ export default function SpirulinaPage() {
         </section>
 
         {/* -------------- Nutritional Powerhouse -------------- */}
-        <section className="py-6 sm:py-10 md:py-12 lg:py-14 bg-green-50">
-          <div className="container mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Nutritional Powerhouse</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-              {nutritionalBenefits.map((item, idx) => (
+        <section className="py-16 bg-gradient-to-br from-white to-gray-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">
+              <span className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">Nutritional Powerhouse</span>
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {[
+                {
+                  icon: <Dumbbell className="w-10 h-10 text-green-700" />,
+                  title: "Complete Protein",
+                  description: "Contains all essential amino acids, making it a superior plant-based protein source.",
+                },
+                {
+                  icon: <Droplet className="w-10 h-10 text-green-700" />,
+                  title: "Rich in Iron",
+                  description: "Excellent bio-available iron, crucial for energy and red-blood-cell formation.",
+                },
+                {
+                  icon: <Shield className="w-10 h-10 text-green-700" />,
+                  title: "Vitamin B12",
+                  description: "One of the few plant sources of active B12, vital for nerve function and metabolism.",
+                },
+                {
+                  icon: <Zap className="w-10 h-10 text-green-700" />,
+                  title: "Powerful Antioxidants",
+                  description: "Phycocyanin and other antioxidants combat oxidative stress.",
+                },
+                {
+                  icon: <Leaf className="w-10 h-10 text-green-700" />,
+                  title: "Chlorophyll",
+                  description: "High chlorophyll supports gentle detox and cellular health.",
+                },
+              ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-4 bg-white rounded-lg shadow-sm flex flex-col items-center text-center transition-all duration-300 hover:shadow-md hover:scale-[1.02]"
+                  className="flex flex-col items-center justify-between bg-gradient-to-br from-green-50 via-white to-green-100 rounded-2xl shadow-[0_8px_24px_-8px_rgba(255,0,0,0.25)] p-6 hover:scale-105 transition-all duration-300"
                 >
-                  <div className="mb-3">{item.icon}</div>
-                  <h3 className="text-base sm:text-lg font-semibold mb-1">{item.title}</h3>
-                  <p className="text-xs sm:text-sm text-gray-600">{item.description}</p>
+                  <div>{item.icon}</div>
+                  <h3 className="text-lg font-bold text-green-900 mt-4 mb-2 text-center">{item.title}</h3>
+                  <p className="text-gray-700 text-center">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -276,16 +300,48 @@ export default function SpirulinaPage() {
           </div>
         </div>
       </section>
-        {/* -------------- CTA -------------- */}
-        <section className="py-6 sm:py-10 md:py-12 lg:py-14 text-center">
-          <div className="container mx-auto px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Ready to try Spirulina?</h2>
-            <Button className="px-8 py-3 text-base sm:text-lg bg-green-600 hover:bg-red-600 text-white rounded-full shadow-lg transition-colors duration-300">
-              Explore Our Products
-            </Button>
+
+      {/* Fun Facts / Trivia */}
+        <section className="py-16 bg-gradient-to-br from-blue-50 to-pink-50">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Did You Know?</span>
+            </h2>
+            <ul className="space-y-6 text-lg text-gray-700 font-medium">
+              <li>
+                <Star className="inline-block w-5 h-5 text-yellow-400 mr-2" />
+                Spirulina is one of the oldest life forms on Earth and was a food source for the Aztecs!
+              </li>
+              <li>
+                <Star className="inline-block w-5 h-5 text-yellow-400 mr-2" />
+                NASA and ESA have used Spirulina as a dietary supplement for astronauts in space missions.
+              </li>
+              <li>
+                <Star className="inline-block w-5 h-5 text-yellow-400 mr-2" />
+                Just 1 gram of Spirulina can cover a child’s daily vitamin A needs.
+              </li>
+            </ul>
           </div>
         </section>
-      </div>
+
+        {/* CTA Section */}
+        <section className="py-16 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-center">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+              Ready to Experience Spirulina?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 font-medium">
+              Make Spirulina a part of your daily routine and unlock the power of nature’s most complete superfood!
+            </p>
+            <button className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:from-orange-500 hover:to-red-500 transform hover:scale-105 transition-all duration-300 shadow-xl flex items-center justify-center mx-auto">
+              <Heart className="w-6 h-6 mr-3" />
+              Shop Spirulina Products
+              <ChevronRight className="w-6 h-6 ml-3" />
+            </button>
+          </div>
+        </section>
+      </div>
+      
       <Footer />
     </>
   )
